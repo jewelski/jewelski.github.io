@@ -3,20 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title | downcase }} | {% endif %}{{ site.title | downcase }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <link rel="preload" href="{{ '/fonts/inter-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
   {% feed_meta %}
 </head>
 <body>
-  <header><a href="{{ '/' | relative_url }}">{{ site.title }}</a></header>
-  <main>
-    {% if page.collection == "posts" %}
-      <h1>{{ page.title }}</h1>
-      <p class="meta">{{ page.date | date: "%-d %B %Y" }}</p>
-    {% endif %}
+  <nav class="nav">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <div class="links">
+      <a href="{{ '/' | relative_url }}#story">story</a>
+      <a href="{{ '/' | relative_url }}#focus">focus</a>
+      <a href="{{ '/' | relative_url }}#writing">writing</a>
+      <a href="{{ '/blog/' | relative_url }}">blog</a>
+      <a href="{{ '/' | relative_url }}#contact">contact</a>
+    </div>
+  </nav>
+
+  {% if page.collection == "posts" %}
+    <header class="hero hero-small">
+      <div class="wrap narrow">
+        <p class="boot">{{ page.date | date: "%-d %B %Y" }} · {{ content | number_of_words | divided_by: 200 | at_least: 1 }} min read</p>
+        <h1>{{ page.title }}</h1>
+        {% if page.tags.size > 0 %}<p class="tags">{% for tag in page.tags %}<span>#{{ tag }}</span>{% endfor %}</p>{% endif %}
+      </div>
+    </header>
+    <main class="band">
+      <article class="wrap narrow prose">{{ content }}</article>
+      <p class="wrap narrow back"><a href="{{ '/blog/' | relative_url }}">← all posts</a></p>
+    </main>
+  {% else %}
     {{ content }}
-  </main>
-  <footer><a href="{{ '/feed.xml' | relative_url }}">RSS</a></footer>
+  {% endif %}
+
+  <footer>
+    <p>© {{ site.time | date: "%Y" }} {{ site.title }} · <a href="https://github.com/{{ site.github_username }}">github</a> · <a href="{{ '/feed.xml' | relative_url }}">rss</a></p>
+    <p>plain html and css. no javascript, no cookies, no tracking.</p>
+  </footer>
 </body>
 </html>

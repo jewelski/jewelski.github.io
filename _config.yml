@@ -1,7 +1,9 @@
-title: Jelle Eggink
+title: jewelski
 description: Notes on data engineering and other things.
-url: ""            # set to https://yourdomain.nl once the domain is live
+github_username: jewelski
+url: https://jewelski.github.io
 permalink: /:title/
+theme: null
 plugins:
   - jekyll-feed
   - jekyll-sitemap

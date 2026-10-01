@@ -1,0 +1,12 @@
+<article class="card">
+  <div class="card-head">
+    <h3><a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a></h3>
+    <span class="meta">{{ include.post.date | date: "%B %-d, %Y" }} · {{ include.post.content | number_of_words | divided_by: 200 | at_least: 1 }} min read</span>
+  </div>
+  {% assign sentences = include.post.content | split: "<h2" | first | strip_html | normalize_whitespace | split: ". " %}
+  <p>{% for sentence in sentences limit:7 %}{{ sentence }}{% unless forloop.last %}. {% endunless %}{% endfor %}{% if sentences.size > 7 %}.{% endif %}</p>
+  <div class="card-foot">
+    <p class="tags">{% for tag in include.post.tags %}<span>#{{ tag }}</span>{% endfor %}</p>
+    <a class="more" href="{{ include.post.url | relative_url }}">read more →</a>
+  </div>
+</article>

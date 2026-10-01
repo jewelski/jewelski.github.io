@@ -1,0 +1,15 @@
+---
+title: blog
+---
+<header class="hero hero-small center">
+  <div class="wrap">
+    <h1 class="name">blog</h1>
+    <p class="sub">lorem ipsum dolor sit amet</p>
+    <p class="boot">$ ls ~/posts<span class="cursor"></span></p>
+  </div>
+</header>
+<main class="band alt">
+  <div class="wrap cards">
+    {% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}
+  </div>
+</main>
