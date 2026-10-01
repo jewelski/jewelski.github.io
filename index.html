@@ -2,20 +2,20 @@
 ---
 <header class="hero">
   <div class="wrap">
-    <p class="boot">$ whoami</p>
+    <p class="boot">initializing... <span class="ok">[OK]</span></p>
     <h1 class="name">jewelski</h1>
-    <p class="tagline">&gt; lorem ipsum dolor sit amet<span class="cursor"></span></p>
+    <p class="tagline">&gt; just here to write things down<span class="cursor"></span></p>
   </div>
 </header>
 
-<section id="story" class="band">
+<section id="hello" class="band">
   <div class="wrap narrow">
-    <h2>my story</h2>
-    <p class="sub">lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <h2>hello</h2>
     <hr>
     <div class="prose">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>I'm a slow thinker. Ideas rarely arrive finished. They show up in pieces, and only start to make sense once I write them down.</p>
+      <p>That's what this place is for. I write about projects I've worked on, things I'm curious about, and opinions that took me a while to form. Some notes are short, some are long, and some I'll probably disagree with in a year.</p>
+      <p>I like to keep things simple. Not because simple is easy, but because reaching it forces me to understand what actually matters. Writing slowly is how I find out.</p>
     </div>
   </div>
 </section>
@@ -49,14 +49,14 @@
   </div>
 </section>
 
-<section id="writing" class="band">
+<section id="notes" class="band">
   <div class="wrap">
-    <h2>writing</h2>
+    <h2>notes</h2>
     <p class="sub">lorem ipsum dolor sit amet, consectetur.</p>
     <div class="cards">
       {% for post in site.posts limit:3 %}{% include post-card.html post=post %}{% endfor %}
     </div>
-    <p class="center all"><a class="more" href="{{ '/blog/' | relative_url }}">all posts →</a></p>
+    <p class="center all"><a class="more" href="{{ '/notes/' | relative_url }}">all notes →</a></p>
   </div>
 </section>
 
@@ -64,9 +64,8 @@
   <div class="wrap narrow center">
     <h2>get in touch</h2>
     <p class="sub">lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <p class="buttons">
-      <a class="btn" href="https://github.com/{{ site.github_username }}">github</a>
-      <a class="btn" href="{{ '/feed.xml' | relative_url }}">rss</a>
+    <p class="socials">
+      <a class="gh" href="https://github.com/{{ site.github_username }}" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
     </p>
   </div>
 </section>

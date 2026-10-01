@@ -5,7 +5,6 @@ url: https://jewelski.github.io
 permalink: /:title/
 theme: null
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
 exclude: [README.md, Gemfile, Gemfile.lock]
 defaults:

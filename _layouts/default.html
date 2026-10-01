@@ -7,16 +7,14 @@
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
   <link rel="preload" href="{{ '/fonts/inter-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
-  {% feed_meta %}
 </head>
 <body>
   <nav class="nav">
     <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <div class="links">
-      <a href="{{ '/' | relative_url }}#story">story</a>
+      <a href="{{ '/' | relative_url }}#hello">hello</a>
       <a href="{{ '/' | relative_url }}#focus">focus</a>
-      <a href="{{ '/' | relative_url }}#writing">writing</a>
-      <a href="{{ '/blog/' | relative_url }}">blog</a>
+      <a href="{{ '/notes/' | relative_url }}">notes</a>
       <a href="{{ '/' | relative_url }}#contact">contact</a>
     </div>
   </nav>
@@ -31,14 +29,14 @@
     </header>
     <main class="band">
       <article class="wrap narrow prose">{{ content }}</article>
-      <p class="wrap narrow back"><a href="{{ '/blog/' | relative_url }}">← all posts</a></p>
+      <p class="wrap narrow back"><a href="{{ '/notes/' | relative_url }}">← all notes</a></p>
     </main>
   {% else %}
     {{ content }}
   {% endif %}
 
   <footer>
-    <p>© {{ site.time | date: "%Y" }} {{ site.title }} · <a href="https://github.com/{{ site.github_username }}">github</a> · <a href="{{ '/feed.xml' | relative_url }}">rss</a></p>
+    <p>© {{ site.time | date: "%Y" }} {{ site.title }}</p>
     <p>plain html and css. no javascript, no cookies, no tracking.</p>
   </footer>
 </body>

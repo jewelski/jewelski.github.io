@@ -40,7 +40,7 @@ h1, h2, h3 { color: var(--heading); font-family: var(--serif); font-weight: 700;
   position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
   padding: 1rem 1.5rem; background: rgba(255,255,255,.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);
 }
-.brand, .links a, .card h3 a, .more, .btn { text-decoration: none; }
+.brand, .links a, .card h3 a, .more, .gh { text-decoration: none; }
 .brand { font-weight: 700; font-size: 1.1rem; letter-spacing: -.01em; color: var(--jet); white-space: nowrap; }
 .links a { color: var(--jet); margin-left: 1.75rem; font-size: .95rem; }
 .links a:hover { color: var(--lavender); text-decoration: none; }
@@ -49,6 +49,7 @@ h1, h2, h3 { color: var(--heading); font-family: var(--serif); font-weight: 700;
 .hero { background: var(--bg-alt); padding: 6rem 0 5.5rem; border-bottom: 1px solid var(--border); }
 .hero-small { padding: 4rem 0 3.5rem; }
 .boot { margin: 0; font: .95rem var(--serif); color: var(--muted); }
+.boot .ok { color: var(--jet); font-weight: 700; text-transform: none; }
 .name { font-size: clamp(2.75rem, 7vw, 4.75rem); letter-spacing: -.02em; margin: .4rem 0 .6rem; }
 .hero-small h1 { font-size: clamp(2rem, 5vw, 3rem); margin: .5rem 0 .75rem; }
 .tagline { margin: 0; font: clamp(1.1rem, 2.5vw, 1.5rem) var(--serif); color: var(--jet); }
@@ -63,6 +64,7 @@ h1, h2, h3 { color: var(--heading); font-family: var(--serif); font-weight: 700;
 .band h2 { font-weight: 500; font-size: clamp(2rem, 4.5vw, 2.75rem); text-align: center; }
 .sub { text-align: center; color: var(--muted); margin: .6rem 0 2.5rem; font-size: 1.05rem; }
 hr { border: 0; border-top: 1px solid var(--frosted); margin: 0 0 2.5rem; }
+.band h2 + hr { margin-top: 2rem; }
 
 /* long-form text, medium style */
 .prose { font: 1.25rem/1.6 var(--serif); color: var(--text); }
@@ -96,9 +98,10 @@ hr { border: 0; border-top: 1px solid var(--frosted); margin: 0 0 2.5rem; }
 .all { margin-top: 2.5rem; }
 
 /* contact */
-.buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 0; }
-.btn { border: 1px solid var(--lavender); border-radius: 99px; padding: .55rem 1.6rem; font-weight: 600; }
-.btn:hover { background: var(--lavender); color: #fff; text-decoration: none; }
+.socials { display: flex; justify-content: center; gap: 1.25rem; margin: 0; }
+.gh { display: inline-flex; color: var(--jet); transition: color .15s, transform .15s; }
+.gh:hover { color: var(--lavender); transform: translateY(-2px); }
+.gh svg { width: 36px; height: 36px; fill: currentColor; }
 
 /* post page */
 .hero-small .tags { margin-top: .25rem; }
