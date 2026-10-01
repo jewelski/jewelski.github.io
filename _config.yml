@@ -1,0 +1,11 @@
+title: Jelle Eggink
+description: Notes on data engineering and other things.
+url: ""            # set to https://yourdomain.nl once the domain is live
+permalink: /:title/
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+exclude: [README.md, Gemfile, Gemfile.lock]
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }

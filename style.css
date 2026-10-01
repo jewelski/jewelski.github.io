@@ -1,0 +1,20 @@
+:root { --bg: #fff; --fg: #222; --muted: #777; --link: #0645ad; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111; --fg: #ddd; --muted: #888; --link: #8ab4f8; }
+}
+body {
+  max-width: 40rem; margin: 0 auto; padding: 2rem 1rem;
+  font: 1.05rem/1.65 system-ui, sans-serif; background: var(--bg); color: var(--fg);
+}
+a { color: var(--link); }
+header a { color: var(--fg); font-weight: 700; text-decoration: none; }
+header, footer { margin: 1rem 0 3rem; }
+footer { margin-top: 4rem; font-size: .9rem; }
+h1 { line-height: 1.2; margin-bottom: .25rem; }
+.meta, .posts time { color: var(--muted); font-size: .9rem; }
+.posts { list-style: none; padding: 0; }
+.posts li { display: flex; gap: 1rem; margin: .4rem 0; }
+.posts time { flex: 0 0 6.5rem; }
+img { max-width: 100%; }
+pre { overflow-x: auto; padding: 1rem; background: rgba(127,127,127,.12); }
+code { font-size: .9em; }

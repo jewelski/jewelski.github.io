@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  {% feed_meta %}
+</head>
+<body>
+  <header><a href="{{ '/' | relative_url }}">{{ site.title }}</a></header>
+  <main>
+    {% if page.collection == "posts" %}
+      <h1>{{ page.title }}</h1>
+      <p class="meta">{{ page.date | date: "%-d %B %Y" }}</p>
+    {% endif %}
+    {{ content }}
+  </main>
+  <footer><a href="{{ '/feed.xml' | relative_url }}">RSS</a></footer>
+</body>
+</html>
